@@ -4,7 +4,8 @@
 from backend.modules.identity.models import User
 from backend.modules.identity.repository import UserRepository
 from backend.modules.identity.schemas import UserCreate
-from backend.shared.exceptions import ConflictError
+from backend.shared.exceptions import ConflictError, PermissionDeniedError
+from backend.shared.security import create_access_token, hash_password, verify_password
 
 
 class IdentityService:
@@ -12,15 +13,15 @@ class IdentityService:
         self.repo = repo
 
     async def register(self, data: UserCreate) -> User:
-        existing = await self.repo.get_by_email(data.email)
-        if existing:
+        if await self.repo.get_by_email(data.email):
             raise ConflictError("Email already registered.")
-        user = User(
-            email=data.email,
-            hashed_password=self._hash(data.password),
-        )
+        user = User(email=data.email, hashed_password=hash_password(data.password))
         return await self.repo.create(user)
 
-    def _hash(self, password: str) -> str:
-        # Placeholder — replace with passlib or bcrypt before production.
-        return f"hashed:{password}"
+    async def login(self, email: str, password: str) -> str:
+        user = await self.repo.get_by_email(email)
+        if not user or not verify_password(password, user.hashed_password):
+            raise PermissionDeniedError("Invalid credentials.")
+        if not user.is_active:
+            raise PermissionDeniedError("Account is inactive.")
+        return create_access_token(subject=str(user.id))
