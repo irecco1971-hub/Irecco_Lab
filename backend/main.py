@@ -5,7 +5,7 @@ from fastapi import FastAPI
 
 from backend.modules.identity.router import router as identity_router
 from backend.modules.products.router import router as products_router
-from backend.modules.beta_program.router import router as beta_router
+from backend.modules.beta_program.router import router as beta_router  # nested under /products/{id}/beta
 from backend.modules.support.router import router as support_router
 from backend.modules.docs.router import router as docs_router
 from backend.modules.notifications.router import router as notifications_router
