@@ -1,4 +1,4 @@
-.PHONY: up down build logs shell migrate revision lint test
+.PHONY: up down build logs shell migrate revision lint test test-local
 
 # ── Docker ────────────────────────────────────────────────────────────────────
 
@@ -33,3 +33,6 @@ lint:
 
 test:
 	docker compose exec backend pytest
+
+test-local:
+	cd backend && python -m pytest
