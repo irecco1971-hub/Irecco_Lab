@@ -20,6 +20,9 @@ build/
 .DS_Store
 Thumbs.db
 
+# Google Drive temp uploads
+.tmp.driveupload/
+
 # IDE
 .vscode/
 .idea/
