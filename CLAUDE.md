@@ -1,55 +1,35 @@
-# Irecco Lab — Claude Code Project Context
+# Irecco Lab — Claude Code Context
 
-## What & Why
-Irecco Lab is an umbrella product studio for multiple distinct software products created by one independent developer.
-The goal is to build a reusable open-source-first platform foundation that supports many products, while shipping one revenue-focused product at a time.
-MillWork is the first anchor product.
+## Czym jest ten repo
 
-## Stack
-- Backend: Python modular monolith
-- Primary languages: Python, JavaScript/TypeScript, Markdown
-- Version control: Git
-- Docs: Markdown files in `docs/`
-- Product delivery workflow: Chat planning -> Claude Code implementation
-- Philosophy: open-source-first, low-cost, self-hosted where practical
+Irecco Lab to **laboratorium rozwiązań** (Solution Laboratory) — marka parasolowa skupiająca trzy niszowe produkty AI. Ten repo przechowuje dokumentację marki i strategiczne decyzje.
 
-## Modules
-- Core platform: users, roles, products, docs, beta access, support, notifications
-- Product modules: each product has its own domain, terminology, UI, and workflows
-- First product: MillWork
-- Future model: modular monolith now, service extraction later only if justified
+**Nie ma tu kodu produkcyjnego.** Każdy produkt ma swoje własne repozytorium.
 
-## Git Rules
-- Commit automatically at session-close or end-of-task checkpoint
-- Do not auto-push
-- Commit only when there are actual file changes
-- Prefer conventional commit prefixes: `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`
-- Commit message should briefly describe what changed and why
+## Misja
 
-## Working Rules
-- One clear task per session
-- Do not redesign the whole platform in one pass
-- Build the smallest reusable foundation that helps the current product ship faster
-- Reuse only what is truly cross-product
-- Keep product-specific logic out of the shared core unless reuse is proven
-- Prefer separate `.md` files with one responsibility each
-- Update `docs/current-state.md` after meaningful progress
-- Update `docs/decisions.md` when an architectural or workflow decision is made
+> Niszowe narzędzia AI. Jedna branża naraz. Każde — do końca.
 
-## What NOT to do
-- Do not start with microservices
-- Do not build a giant all-purpose platform before the first product earns money
-- Do not mix product-specific terminology into global core modules
-- Do not create hidden cross-module dependencies
-- Do not allow direct cross-module SQL reads as a shortcut
-- Do not auto-push commits
-- Do not make large multi-topic sessions when a smaller scoped session is possible
+## Produkty
 
-## Context Files
-- `docs/architecture.md`
-- `docs/product-map.md`
-- `docs/core-vs-product.md`
-- `docs/backend-structure.md`
-- `docs/current-state.md`
-- `docs/decisions.md`
-- `docs/claude-code-workflow.md`
+| Produkt | Repo | Branża |
+|---|---|---|
+| MillWork | github.com/irecco1971-hub/millwork | Stolarstwo CNC |
+| TechHub | github.com/irecco1971-hub/techhub | Szkolenia B2B (Aluprof) |
+| Thomos | github.com/irecco1971-hub/thomos | Zdrowie / dokumentacja medyczna |
+
+## Dokumenty w tym repo
+
+- `docs/marka.md` — misja, pozycjonowanie, wartości marki
+- `docs/produkty.md` — opisy produktów (stan, stack, model biznesowy)
+- `docs/decisions.md` — log decyzji strategicznych (chronologiczny)
+- `docs/claude-code-workflow.md` — historyczny workflow sesji (archiwum)
+- `docs/archiwum/` — dokumenty z fazy 0 (Python platform concept, 2026-06)
+
+## Reguły pracy w tym repo
+
+- Aktualizuj `docs/marka.md` gdy zmienia się misja, pozycjonowanie lub wartości
+- Aktualizuj `docs/produkty.md` gdy zmienia się etap lub stack produktu
+- Dodawaj wpisy do `docs/decisions.md` gdy podejmujesz decyzję strategiczną
+- Język: polski w dokumentach marki, angielski dopuszczalny w nagłówkach technicznych
+- Commit po każdej sensownej zmianie: `docs: [co zmieniono]`

@@ -1,28 +1,23 @@
 # Irecco Lab
 
-Umbrella product studio platform. Open-source-first, Python modular monolith.
+Laboratorium Rozwiązań — niszowe narzędzia AI dla konkretnych branż.
 
-**First product:** [MillWork](https://github.com/irecco1971-hub/Irecco_Lab) — SketchUp plugin for CNC woodworkers.
+> Niszowe narzędzia AI. Jedna branża naraz. Każde — do końca.
 
-## Quick start
+## Produkty
 
-```bash
-cp .env.example .env
-docker compose up -d
-```
+| Produkt | Branża | Etap |
+|---|---|---|
+| [MillWork](https://github.com/irecco1971-hub/millwork) | Stolarstwo CNC — plugin SketchUp | PROJECT STONE, Spring 2027 |
+| [TechHub](https://github.com/irecco1971-hub/techhub) | Szkolenia B2B (Aluprof) | Faza 3 — AI Studio |
+| [Thomos](https://github.com/irecco1971-hub/thomos) | Zdrowie / dokumentacja medyczna | MVP beta, Q4 2026 |
 
-API docs available at `http://localhost:8000/docs`.
+## Dokumentacja
 
-## Structure
+- [`docs/marka.md`](docs/marka.md) — misja, pozycjonowanie, wartości
+- [`docs/produkty.md`](docs/produkty.md) — opisy wszystkich trzech produktów
+- [`docs/decisions.md`](docs/decisions.md) — kluczowe decyzje strategiczne
 
-```
-backend/        # FastAPI modular monolith
-  modules/      # identity, products, beta_program, support, docs, notifications
-  shared/       # base models, dependencies, exceptions
-docs/           # project documentation and architecture decisions
-frontend/       # placeholder
-```
+## Archiwum
 
-## Development docs
-
-See [`docs/`](docs/) for architecture, decisions, and workflow guides.
+`docs/archiwum/` — dokumenty z fazy 0 (2026-06, Python platform concept).
